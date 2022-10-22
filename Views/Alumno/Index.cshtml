@@ -1,0 +1,31 @@
+﻿@* Asignado es para decirle que es fuertemente tipado como esta en el modelo *@
+@model Alumno 
+
+@{ 
+    @* Codigo Csharp *@
+    @* Es debil mente tipado y este segmento de código se conoce como razor syntax*@
+    ViewData["Title"] = "Información de Alumno";
+
+    @* Nombre de la plantilla o template *@
+    Layout = "Simple";
+    @* Layout = "_Layout"; *@
+}
+
+<br><br><br>
+<h1>@ViewData["Title"]</h1>
+
+<strong>Desde la vista normal</strong>
+<p>
+    Nombre: @Model.Nombre <br/>
+    Id: @Model.UniqueId
+</p>
+
+<strong>Desde la vista parcial o componente a reutilizar</strong>
+@* Al vez de pasar el modelo, se le pasa el nombre *@
+@* <partial name="ObjetoEscuelaSimple" model="@Model.Nombre" /> *@
+
+@* Añade el @model que definimos por default *@
+<partial name="ObjetoEscuelaSimple" />
+
+@* Mandar informacion a la vista *@
+<p><i>@ViewBag.Fecha</i></p>

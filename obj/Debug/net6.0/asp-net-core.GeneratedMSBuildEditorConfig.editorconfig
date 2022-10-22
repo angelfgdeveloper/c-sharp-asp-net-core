@@ -15,6 +15,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\angel\Documents\c-sharp-projects\asp-net-core
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/angel/Documents/c-sharp-projects/asp-net-core/Views/Alumno/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bW5vXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/angel/Documents/c-sharp-projects/asp-net-core/Views/Alumno/MultiAlumno.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bW5vXE11bHRpQWx1bW5vLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/angel/Documents/c-sharp-projects/asp-net-core/Views/Asignatura/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpZ25hdHVyYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/angel/Documents/c-sharp-projects/asp-net-core/Views/Asignatura/MultiAsignatura.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNpZ25hdHVyYVxNdWx0aUFzaWduYXR1cmEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/angel/Documents/c-sharp-projects/asp-net-core/Views/Escuela/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNjdWVsYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -27,8 +43,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/angel/Documents/c-sharp-projects/asp-net-core/Views/Shared/AsignaturaSimple.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFzaWduYXR1cmFTaW1wbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/angel/Documents/c-sharp-projects/asp-net-core/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/angel/Documents/c-sharp-projects/asp-net-core/Views/Shared/ListaObjetosEscuelaSimple.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExpc3RhT2JqZXRvc0VzY3VlbGFTaW1wbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/angel/Documents/c-sharp-projects/asp-net-core/Views/Shared/ObjetoEscuelaSimple.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE9iamV0b0VzY3VlbGFTaW1wbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/angel/Documents/c-sharp-projects/asp-net-core/Views/Shared/Simple.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFNpbXBsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/angel/Documents/c-sharp-projects/asp-net-core/Views/Shared/_ValidationScriptsPartial.cshtml]

@@ -1,0 +1,47 @@
+﻿@model List<Alumno>
+
+@{ 
+    @* Codigo Csharp *@
+    @* Es debil mente tipado y este segmento de código se conoce como razor syntax*@
+    ViewData["Title"] = "Información de Alumnos";
+
+    @* Nombre de la plantilla o template *@
+    Layout = "Simple";
+    @* Layout = "_Layout"; *@
+}
+
+<br><br><br>
+<h1>@ViewData["Title"]</h1>
+
+@* <strong>Desde la vista parcial o componente a reutilizar</strong> *@
+@* Vista parcial *@
+@* @foreach (Alumno alumno in Model) *@
+@* { *@
+    @* model="Alumno" *@
+    @* <partial name="ObjetoEscuelaSimple" model="alumno" /> *@
+@* } *@
+
+
+@* bootstrap *@
+@* <table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Alumno alumno in @Model)
+        {
+        <tr>
+            <td>@alumno.Nombre</td>
+            <td>@alumno.UniqueId</td>
+        </tr>
+        }
+    </tbody>
+</table> *@
+
+<partial name="ListaObjetosEscuelaSimple" />
+
+@* Mandar informacion a la vista *@
+<p><i>@ViewBag.Fecha</i></p>

@@ -11,7 +11,17 @@ public class EscuelaController : Controller
   public IActionResult Index()
   {
     // Crear modelo y enviarlo a la vistas
-    Escuela escuela = new Escuela() { EscuelaId = Guid.NewGuid().ToString(), Nombre = "Platzi School", AnnioFundacion = 2005 };
+    Escuela escuela = new Escuela();
+    escuela.AnnioFundacion = 2005;
+    escuela.UniqueId = Guid.NewGuid().ToString();
+    escuela.Nombre = "Platzi School";
+    escuela.Direccion = "Avd Siempre viva";
+    escuela.Ciudad = "Bogota";
+    escuela.Pais = "Colombia";
+    escuela.TipoEscuela = TiposEscuela.Secundaria;
+
+    ViewBag.CosaDinamica = "Halloween";
+
     return View(escuela); // Redireccionando a Index
   }
 

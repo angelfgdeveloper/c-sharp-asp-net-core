@@ -5,9 +5,22 @@
     @* Codigo Csharp *@
     @* Es debil mente tipado y este segmento de código se conoce como razor syntaz*@
     ViewData["Title"] = "Información de Escuela";
+
+    @* Nombre de la plantilla o template *@
+    @* Layout = "Simple"; *@
     Layout = "_Layout";
 }
 
-<h1>Escuela</h1>
+<h1>Escuela @ViewData["Title"]</h1>
 <h2>Nombre: @Model.Nombre</h2>
+<h3>Tipo de Escuela: @Model.TipoEscuela</h3>
+<address>
+    <p>Dirección: @Model.Direccion</p>
+    <p>País: @Model.Pais</p>
+    <p>Ciudad: @Model.Ciudad</p>
+</address>
 <p><strong>Año de Fundación: </strong>@Model.AnnioFundacion</p>
+
+@* Mandar informacion a la vista *@
+<p><i>@ViewBag.CosaDinamica</i></p>
+<p><i>@ViewData["CosaDinamica"]</i></p>

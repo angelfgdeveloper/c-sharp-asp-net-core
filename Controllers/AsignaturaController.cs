@@ -13,7 +13,7 @@ public class AsignaturaController : Controller
   {
     // Crear modelo y enviarlo a la vistas
     Asignatura asignatura = new Asignatura() {
-      UniqueId = Guid.NewGuid().ToString(),
+      Id = Guid.NewGuid().ToString(),
       Nombre = "Programación"
     };
 
@@ -27,11 +27,11 @@ public class AsignaturaController : Controller
   public IActionResult MultiAsignatura()
   {
     List<Asignatura> listaAsignaturas = new List<Asignatura>() {
-      new Asignatura { Nombre = "Matemáticas", UniqueId = Guid.NewGuid ().ToString () },
-      new Asignatura { Nombre = "Educación Física", UniqueId = Guid.NewGuid ().ToString () },
-      new Asignatura { Nombre = "Castellano", UniqueId = Guid.NewGuid ().ToString () },
-      new Asignatura { Nombre = "Ciencias Naturales", UniqueId = Guid.NewGuid ().ToString () },
-      new Asignatura { Nombre = "Programacion", UniqueId = Guid.NewGuid ().ToString () }
+      new Asignatura { Nombre = "Matemáticas", Id = Guid.NewGuid ().ToString () },
+      new Asignatura { Nombre = "Educación Física", Id = Guid.NewGuid ().ToString () },
+      new Asignatura { Nombre = "Castellano", Id = Guid.NewGuid ().ToString () },
+      new Asignatura { Nombre = "Ciencias Naturales", Id = Guid.NewGuid ().ToString () },
+      new Asignatura { Nombre = "Programacion", Id = Guid.NewGuid ().ToString () }
     };
 
     ViewBag.cosaDinamica = "Hey!";

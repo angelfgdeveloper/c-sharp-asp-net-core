@@ -7,6 +7,16 @@ namespace asp_net_core.Controllers;
 public class AlumnoController : Controller
 {
 
+  private EscuelaContext _context;
+
+  public AlumnoController(EscuelaContext context)
+  {
+    this._context = context;
+
+     // Crea DB
+     context.Database.EnsureCreated();
+  }
+
   // Vista Index que va a redireccion
   // https://localhost:7168/alumno/Index
   public IActionResult Index()
@@ -21,7 +31,7 @@ public class AlumnoController : Controller
     ViewBag.cosaDinamica = "Hey!";
     ViewBag.Fecha = DateTime.Now;
 
-    return View(alumno); // Redireccionando a Index
+    return View(_context.Alumnos.FirstOrDefault()); // Redireccionando a Index
   }
 
   // https://localhost:7168/alumno/multialumno
@@ -41,7 +51,7 @@ public class AlumnoController : Controller
     ViewBag.Fecha = DateTime.Now;
 
     // Se especifica el nombre que renderizara del html "MultiAlumno",
-    return View("MultiAlumno", listaAlumnos); // Redireccionando a Index
+    return View("MultiAlumno", _context.Alumnos); // Redireccionando a Index
   }
 
   private List<Alumno> GenerarAlumnosAlAzar()

@@ -7,15 +7,27 @@ namespace asp_net_core.Controllers;
 public class AsignaturaController : Controller
 {
 
+  private EscuelaContext _context;
+
+  public AsignaturaController(EscuelaContext context)
+  {
+    this._context = context;
+
+     // Crea DB
+     context.Database.EnsureCreated();
+  }
+
   // Vista Index que va a redireccion
   // https://localhost:7168/Asignatura/Index
   public IActionResult Index()
   {
     // Crear modelo y enviarlo a la vistas
-    Asignatura asignatura = new Asignatura() {
-      Id = Guid.NewGuid().ToString(),
-      Nombre = "Programación"
-    };
+    // Asignatura asignatura = new Asignatura() {
+    //   Id = Guid.NewGuid().ToString(),
+    //   Nombre = "Programación"
+    // };
+
+    Asignatura asignatura = _context.Asignaturas.FirstOrDefault();
 
     ViewBag.cosaDinamica = "Hey!";
     ViewBag.Fecha = DateTime.Now;
@@ -38,7 +50,7 @@ public class AsignaturaController : Controller
     ViewBag.Fecha = DateTime.Now;
 
     // Se especifica el nombre que renderizara del html "MultiAsignatura",
-    return View("MultiAsignatura", listaAsignaturas); // Redireccionando a Index
+    return View("MultiAsignatura", _context.Asignaturas); // Redireccionando a Index
   }
 
 }

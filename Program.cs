@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 
 // DB
 builder.Services.AddDbContext<EscuelaContext>(
-    optionsAction => optionsAction.UseInMemoryDatabase(databaseName: "testDB")
+    optionsAction => optionsAction.UseInMemoryDatabase(databaseName: "testDB") // DB in memory
     // optionsAction => optionsAction.UseSqlServer(databaseName: "testDB")
 );
 

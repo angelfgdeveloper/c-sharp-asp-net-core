@@ -12,7 +12,7 @@ public class EscuelaController : Controller
   {
     this._context = context;
 
-     // Cread DB
+     // Crea DB
      context.Database.EnsureCreated();
   }
 
@@ -29,7 +29,7 @@ public class EscuelaController : Controller
     // escuela.Pais = "Colombia";
     // escuela.TipoEscuela = TiposEscuela.Secundaria;
 
-    // ViewBag.CosaDinamica = "Halloween";
+    ViewBag.CosaDinamica = "Halloween";
 
     // Conecando con la DB
     Escuela escuela = this._context.Escuelas.FirstOrDefault();

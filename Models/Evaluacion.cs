@@ -9,6 +9,10 @@ public class Evaluacion : ObjetoEscuelaBase
 
   public float Nota { get; set; }
 
+  // Llaves foraneas
+  public string AlumnoId { get; set; }
+  public string AsignaturaId { get; set; }
+
   public override string ToString()
   {
     return $"{Nota}, {Alumno.Nombre}, {Asignatura.Nombre}";

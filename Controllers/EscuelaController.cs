@@ -12,7 +12,7 @@ public class EscuelaController : Controller
   {
     this._context = context;
 
-     // Crea DB
+     // Cread DB
      context.Database.EnsureCreated();
   }
 
@@ -32,7 +32,7 @@ public class EscuelaController : Controller
     ViewBag.CosaDinamica = "Halloween";
 
     // Conecando con la DB
-    Escuela escuela = this._context.Escuelas.FirstOrDefault();
+    var escuela = this._context.Escuelas.FirstOrDefault();
     //System.Console.WriteLine(this._context.Escuelas.FirstOrDefault<Escuela>());
 
     return View(escuela); // Redireccionando a Index

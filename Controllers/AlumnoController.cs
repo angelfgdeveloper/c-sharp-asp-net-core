@@ -19,7 +19,7 @@ public class AlumnoController : Controller
 
   // Vista Index que va a redireccion
   // https://localhost:7168/alumno/Index
-  public IActionResult Index()
+  public IActionResult Index2()
   {
     // Crear modelo y enviarlo a la vistas
     Alumno alumno = new Alumno()
@@ -32,6 +32,25 @@ public class AlumnoController : Controller
     ViewBag.Fecha = DateTime.Now;
 
     return View(_context.Alumnos.FirstOrDefault()); // Redireccionando a Index
+  }
+
+  [Route("Alumno/Index")]
+  [Route("Alumno/Index/{alumnoId}")]
+  public IActionResult Index(string alumnoId)
+  {
+
+    if (!string.IsNullOrWhiteSpace(alumnoId))
+    {
+      var alumno = from alum in _context.Alumnos
+                              where alum.Id == alumnoId
+                              select alum;
+      return View(alumno.SingleOrDefault()); // Redireccionando y enviando un solo alumno
+    }
+    else
+    {
+      return View("MultiAlumno", _context.Alumnos); // Redireccionando a Index 
+    }
+
   }
 
   // https://localhost:7168/alumno/multialumno

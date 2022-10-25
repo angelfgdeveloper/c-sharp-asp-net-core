@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Curso>
+
+@{ 
+    @* Codigo Csharp *@
+    @* Es debil mente tipado y este segmento de código se conoce como razor syntax*@
+    ViewData["Title"] = "Información de Cursos";
+
+    @* Nombre de la plantilla o template *@
+    Layout = "Simple";
+    @* Layout = "_Layout"; *@
+}
+
+<br><br><br>
+<h1>@ViewData["Title"]</h1>
+
+<partial name="ListaObjetosEscuelaSimple" />
+
+@* Mandar informacion a la vista *@
+<p><i>@ViewBag.Fecha</i></p>

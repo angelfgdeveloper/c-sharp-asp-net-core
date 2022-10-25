@@ -19,7 +19,7 @@ public class AsignaturaController : Controller
 
   // Vista Index que va a redireccion
   // https://localhost:7168/Asignatura/Index
-  public IActionResult Index()
+  public IActionResult Index2()
   {
     // Crear modelo y enviarlo a la vistas
     // Asignatura asignatura = new Asignatura() {
@@ -33,6 +33,26 @@ public class AsignaturaController : Controller
     ViewBag.Fecha = DateTime.Now;
 
     return View(asignatura); // Redireccionando a Index
+  }
+
+  // https://localhost:7168/asignatura/index/775059d7-06a3-4550-980e-5088a27cc0d2
+  [Route("Asignatura/Index")]
+  [Route("Asignatura/Index/{asignaturaId}")]
+  public IActionResult Index(string asignaturaId)
+  {
+
+    if (!string.IsNullOrWhiteSpace(asignaturaId))
+    {
+      var asignatura = from asig in _context.Asignaturas
+                              where asig.Id == asignaturaId
+                              select asig;
+      return View(asignatura.SingleOrDefault()); // Redireccionando y enviando una sola asignatura
+    }
+    else
+    {
+      return View("MultiAsignatura", _context.Asignaturas); // Redireccionando a Index 
+    }
+
   }
 
   // https://localhost:7168/asignatura/multiasignatura

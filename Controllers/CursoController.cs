@@ -46,4 +46,37 @@ public class CursoController : Controller
     return View("MultiCurso", _context.Cursos); // Redireccionando a Index
   }
 
+  // https://localhost:7168/Curso/Create
+  public IActionResult Create()
+  {
+    ViewBag.Fecha = DateTime.Now;
+
+    return View(); // Redireccionando a Index
+  }
+
+  [HttpPost] // Metodo POST
+  public IActionResult Create(Curso curso)
+  {
+    ViewBag.Fecha = DateTime.Now;
+
+    if (ModelState.IsValid) // Si el modelo es valido
+    {
+      Escuela escuela = this._context.Escuelas.FirstOrDefault();
+      curso.Id = Guid.NewGuid().ToString();
+      curso.EscuelaId = escuela.Id;
+
+      this._context.Cursos.Add(curso);
+      this._context.SaveChanges(); // Guardar cambios
+
+      ViewBag.MensajeExtra = "Curso creado";
+      return View("Index", curso); // Redirecciona a Index
+    }
+    else
+    {
+      return View(curso);
+    }
+
+
+  }
+
 }

@@ -87,6 +87,12 @@ public class EscuelaContext : DbContext
     };
   }
 
+  public List<Curso> AddCurso(Curso curso)
+  {
+    this.Cursos.Add(curso);
+    return this.Cursos.ToList();
+  }
+
   private static List<Asignatura> CargarAsignaturas(List<Curso> cursos)
   {
     List<Asignatura> listaCompleta = new List<Asignatura>();

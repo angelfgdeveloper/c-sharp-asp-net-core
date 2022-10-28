@@ -58,14 +58,17 @@ public class CursoController : Controller
   public IActionResult Create(Curso curso)
   {
     ViewBag.Fecha = DateTime.Now;
+    // var errors = ModelState.Values.SelectMany(v => v.Errors).ToArray();
+    Escuela escuela = this._context.Escuelas.FirstOrDefault();
+    curso.Id = Guid.NewGuid().ToString();
+    curso.Escuela = escuela;
+    curso.EscuelaId = escuela.Id;
+    this._context.AddCurso(curso);
 
-    if (ModelState.IsValid) // Si el modelo es valido
+    // if (ModelState.IsValid) // Si el modelo es valido
+    var existCurso = this._context.Cursos.Find(curso.Id);
+    if (existCurso.Nombre != null)
     {
-      Escuela escuela = this._context.Escuelas.FirstOrDefault();
-      curso.Id = Guid.NewGuid().ToString();
-      curso.EscuelaId = escuela.Id;
-
-      this._context.Cursos.Add(curso);
       this._context.SaveChanges(); // Guardar cambios
 
       ViewBag.MensajeExtra = "Curso creado";

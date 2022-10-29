@@ -78,12 +78,13 @@ public class EscuelaContext : DbContext
           Id = Guid.NewGuid().ToString(),
           EscuelaId = escuela.Id,
           Nombre = "101",
+          Direccion = "Av. Boulverd street",
           Jornada = TiposJornada.Mañana 
       },
-      new Curso() {Id = Guid.NewGuid().ToString(), EscuelaId = escuela.Id, Nombre = "201", Jornada = TiposJornada.Mañana},
-      new Curso() {Id = Guid.NewGuid().ToString(), EscuelaId = escuela.Id, Nombre = "301", Jornada = TiposJornada.Mañana},
-      new Curso() {Id = Guid.NewGuid().ToString(), EscuelaId = escuela.Id, Nombre = "401", Jornada = TiposJornada.Tarde},
-      new Curso() {Id = Guid.NewGuid().ToString(), EscuelaId = escuela.Id, Nombre = "501", Jornada = TiposJornada.Tarde},
+      new Curso() {Id = Guid.NewGuid().ToString(), EscuelaId = escuela.Id, Nombre = "201", Direccion = "Av. Boulverd street", Jornada = TiposJornada.Mañana},
+      new Curso() {Id = Guid.NewGuid().ToString(), EscuelaId = escuela.Id, Nombre = "301", Direccion = "Av. Boulverd street", Jornada = TiposJornada.Mañana},
+      new Curso() {Id = Guid.NewGuid().ToString(), EscuelaId = escuela.Id, Nombre = "401", Direccion = "Av. Boulverd street", Jornada = TiposJornada.Tarde},
+      new Curso() {Id = Guid.NewGuid().ToString(), EscuelaId = escuela.Id, Nombre = "501", Direccion = "Av. Boulverd street", Jornada = TiposJornada.Tarde},
     };
   }
 
